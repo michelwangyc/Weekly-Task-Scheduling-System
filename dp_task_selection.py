@@ -28,7 +28,6 @@ def select_tasks_with_deadlines_dp(
     for i in range(1, n + 1):
         task = sorted_tasks[i - 1]
         dur = task.duration
-        # 防御性写法：deadline_slot 不超过 T
         deadline_slot = min(task.deadline_day * hours_per_day, T)
 
         for t in range(T + 1):
